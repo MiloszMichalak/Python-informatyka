@@ -16,5 +16,5 @@ def NR(x, n):
     return a
 
 
-print(NR_EPS(49, 0.001))
-print(NR(49, 7))
+print(NR_EPS(3, 0.001))
+print(NR(3, 7))
