@@ -64,7 +64,16 @@ file.close()
 
 # zadanie 5
 print("Zadanie 5")
-# pseudokod
+# funkcja wyszukiwanie_binarne(T, a, n):
+# lewy ← 1
+# prawy ← n
+# dopóki lewy < prawy wykonuj:
+# srodek ← (lewy + prawy) div 2
+# jeżeli T[srodek] < a to:
+# lewy ← srodek +1
+# w przeciwnym wypadku:
+# prawy ← srodek
+# zwróć T[lewy] = a i zakończ
 
 
 # zadanie 6
@@ -85,4 +94,16 @@ file.close()
 
 # zadanie7 - maturalne
 print("Zadanie 7 - maturalne")
+n = 10
+T = [0, 5, 99, 3, 7, 111, 13, 4, 24, 4, 8]
 
+left = 0
+right = n - 1
+while left < right:
+    middle = (left + right) // 2
+    if T[middle] % 2 != 0:
+        left = middle + 1
+    else:
+        right = middle
+w = T[left]
+print(w)
