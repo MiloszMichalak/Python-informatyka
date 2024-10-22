@@ -49,7 +49,7 @@ for i in file:
 
 # zadanie 5a
 print("Zadanie 5a")
-file = open("slowa.txt")
+file = open("slowa.txt", "r")
 number = 1
 for line in file:
     print(number, line.strip())
@@ -58,7 +58,7 @@ file.close()
 
 # Zadanie 5b
 print("Zadanie 5b")
-file = open("slowa.txt")
+file = open("slowa.txt", "r")
 ile = 0
 for line in file:
     ile += 1
@@ -67,7 +67,7 @@ file.close()
 
 # Zadanie 5c
 print("Zadanie 5c")
-file = open("slowa.txt")
+file = open("slowa.txt", "r")
 for line in file:
     if str(line[0]) == 'A':
         print(line.strip())
@@ -75,7 +75,7 @@ file.close()
 
 # Zadanie 5d
 print("Zadanie 5d")
-file = open("slowa.txt")
+file = open("slowa.txt", "r")
 for line in file:
     if str(line.strip()[-1]) == 'A':
         print(line.strip())
@@ -83,14 +83,14 @@ file.close()
 
 # Zadanie 5e
 print("Zadanie 5e")
-file = open("slowa.txt")
+file = open("slowa.txt", "r")
 for line in file:
     print(line.strip(), len(line.strip()))
 file.close()
 
 # Zadanie 5f
 print("Zadanie 5f")
-file = open("slowa.txt")
+file = open("slowa.txt", "r")
 dlugosci = []
 slowa = []
 
@@ -110,7 +110,7 @@ file.close()
 
 # Zadanie  5g
 print("Zadanie 5g")
-file = open("slowa.txt")
+file = open("slowa.txt", "r")
 for line in file:
     if len(line.strip()) == 6:
         print(line.strip())
@@ -118,7 +118,7 @@ file.close()
 
 # Zdadanie 5h
 print("Zadanie 5h")
-file = open("slowa.txt")
+file = open("slowa.txt", "r")
 for line in file:
     if line.count('O') > 0:
         print(line.strip(), line.count('O'))
@@ -126,8 +126,44 @@ file.close()
 
 # Zadanie 5i
 print("Zadanie 5i")
-file = open("slowa.txt")
+file = open("slowa.txt", "r")
 ile = 0
 for line in file:
-    ile += line.count("O")
+    ile += line.count('A')
+print(ile)
 file.close()
+
+zapis = open(folder+"wyniki.txt", "w")
+# Zadanie 6a
+print("Zadanie 6a")
+zapis.write("Zadanie 6a\n")
+
+file = open("liczby.txt", "r")
+zapis.write(f"Dlugosc {len(list(map(str, file)))}\n")
+file.close()
+
+# Zadanie 6b
+print("Zadanie 6b")
+zapis.write("Zadanie 6b\n")
+
+file = open("liczby.txt", "r")
+for line in file:
+    if int(line.rstrip()[-1]) == 0:
+        zapis.write(line)
+file.close()
+
+# Zadanie 6c
+print("Zadanie 6c")
+zapis.write("Zadanie 6c\n")
+
+file = open("liczby.txt", "r")
+for line in file:
+    if int(line.strip()) == 0 or int(line.rstrip()[-3:]) == 000:
+        zapis.write(line)
+file.close()
+
+# Zadanie 6d
+print("Zadanie 6d")
+zapis.write("Zadanie 6d\n")
+
+
