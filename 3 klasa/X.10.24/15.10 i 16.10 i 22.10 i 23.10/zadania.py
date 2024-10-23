@@ -44,7 +44,7 @@ print("Zadanie 4")
 file = open("ciagi.txt", "r")
 for i in file:
     numbers = list(map(int, i.split()))
-    if len(numbers) % 2 == 0:
+    if sum(numbers) % 2 == 0:
         print(*numbers)
 
 # zadanie 5a
@@ -165,5 +165,49 @@ file.close()
 # Zadanie 6d
 print("Zadanie 6d")
 zapis.write("Zadanie 6d\n")
+file = open("liczby.txt", "r")
+for line in file:
+    if line.count('1') > line.count('0'):
+        zapis.write(line)
+file.close()
+
+# Zadanie 6e
+print("Zadanie 6d")
+zapis.write("Zadanie 6d\n")
+file = open("liczby.txt", "r")
+for line in file:
+    dec = int(line, 2)
+    zapis.write(str(dec) + "\n")
+
+file.close()
+zapis.close()
+
+# Zadanie 7
+print("Zadanie 7")
+zapis = open(folder+"losowe_w_linii.txt", "w")
+for i in range(20):
+    zapis.write(str(randint(1, 10)) + " ")
+else:
+    zapis.write("\n")
+
+zapis.close()
+
+file = open(folder+"losowe_w_linii.txt", "r")
+numbers = list(map(int, file.readline().split()))
+file.close()
+
+liczby = [0] * 15
+for line in numbers:
+    liczby[int(line)] += 1
+
+maksymalneLiczby = []
+
+maks = max(liczby)
+for i in range(len(liczby)):
+    print(f"Liczba: {numbers[i]} ilosc: {liczby[i]}")
+    if liczby[i] == maks:
+        maksymalneLiczby.append(numbers[i])
+
+print(set(maksymalneLiczby))
 
 
