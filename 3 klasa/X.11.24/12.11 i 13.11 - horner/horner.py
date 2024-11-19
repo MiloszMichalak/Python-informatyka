@@ -16,7 +16,7 @@ print(HornerNaiwna(ciag, n, x))
 
 def HornerIter(A, n, x):
     y = A[n]
-    for i in range(n-1, -1, -1):
+    for i in range(n-1, 0, -1):
         y = x * y + A[i]
     return y
 
@@ -40,8 +40,50 @@ print(HornerReku(wspolczynniki, n, x))
 
 # zadanie 4
 print("Zadanie 4")
-# smieszny pseudokod dla odwroconych po prostu
+# Odwrotna wersja naiwna liczaca od konca
+# y ← A[n]
+# potęga ← 1
+# dla i ← n - 1, n - 2, ..., 0 wykonuj
+#   potega ← potega * x
+#   y ← y + A[i] * potega
+
+# Odwrotny horner - liczy od poczatku
+# y ← A[0]
+# dla i ← 1, 2, ..., n wykonuj
+#   y ← x * y + A[i]
+
+def HornerNaiwnaOdwrocona(A, n, x):
+    y = A[n]
+    potega = 1
+    for i in range(n - 1, -1, -1):
+        potega *= x
+        y += A[i] * potega
+    return y
 
 # zadanie 5
 print("Zadanie 5")
+print("Zadanie 1 odwrocona kolejnosc")
 
+ciag = list(map(int, input("Podaj wspolczynniki od an do a0: ").split()))
+x = float(input("Podaj x: "))
+n = len(ciag) - 1
+
+print(HornerNaiwnaOdwrocona(ciag, n, x))
+
+def HornerIterOdwrocona(A, n, x):
+    y = A[0]
+    for i in range(1, n + 1):
+        y = x * y + A[i]
+    return y
+
+print("Zadanie 2 odwrocona kolejnosc")
+wspolczynniki = list(map(int, input("Podaj wspolczynniki od an d0 a0: ").split()))
+n = len(ciag) - 1
+x = float(input("Podaj x: "))
+print(HornerIterOdwrocona(wspolczynniki, n, x))
+
+def HornerPython(A, x):
+    y = 0
+    for a in A:
+        y = x * y + a
+    return y
