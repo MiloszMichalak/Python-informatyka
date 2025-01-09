@@ -19,7 +19,7 @@ def czy_rosnaco_malejacy(ciag):
     return i == dlugosc
 
 
-file = open("pi_przyklad.txt")  
+file = open("pi.txt")  
 ciag = list(map(int, file.read().split()))
 file.close()
 
@@ -45,4 +45,4 @@ for i in range(1, len(ciag)):
             fragment = [ciag[i - 1]]
             czy_rosnie = True
             
-print(najdluzszy)
+print("".join(map(str, najdluzszy)))
