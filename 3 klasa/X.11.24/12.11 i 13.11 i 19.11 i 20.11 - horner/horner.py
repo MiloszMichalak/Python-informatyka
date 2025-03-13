@@ -16,7 +16,7 @@
 # 
 # def HornerIter(A, n, x):
 #     y = A[n]
-#     for i in range(n-1, 0, -1):
+#     for i in range(n-2, -1, -1):
 #         y = y * x + A[i]
 #     return y
 # 
