@@ -1,3 +1,0 @@
-print("Zadanie 1")
-
-
