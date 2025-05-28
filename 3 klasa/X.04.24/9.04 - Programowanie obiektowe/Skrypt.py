@@ -1,6 +1,3 @@
-from socket import EAGAIN
-
-
 class Osoba:
     def __init__(self, imie, nazwisko, wzrost, waga):
         self.imie = imie
