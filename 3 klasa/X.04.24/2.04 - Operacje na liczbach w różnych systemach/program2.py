@@ -9,12 +9,12 @@ def binToDec(number):
 
 def decToBin(number):
     bin = ""
-    while number > 0:
+    while number > 1:
         if number % 2 == 0:
             bin = "0" + bin
         else:
             bin = "1" + bin
-        number //= 2
+        number /= 2
     return bin
 
 
