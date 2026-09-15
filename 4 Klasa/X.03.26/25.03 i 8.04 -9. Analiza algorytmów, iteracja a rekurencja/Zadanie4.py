@@ -8,22 +8,21 @@
 # Kwadratowa
 
 # Zadanie 4.3
-with open('dane4.txt', 'r', encoding='utf-8') as f:
-    x = [int(line.strip()) for line in f if line.strip()]
-    
-max_par = -1
-szukane_i = -1
+plik = open("dane4.txt", "r")
+x = [int(linia) for linia in plik]
+plik.close()
 
+liczba = 0
+maxi = 0
 
-for i in range(len(x)):
-    liczba_par = 0
-
+for i in range(1, len(x)):
+    par = 0
     for j in range(i):
         if x[i] > x[j]:
-            liczba_par += 1
+            par += 1
 
-    if liczba_par > max_par:
-        max_par = liczba_par
-        szukane_i = i + 1
+    if par >= liczba:
+        liczba = par
+        maxi = i
 
-print(f"Szukane i (numer wiersza z pliku): {szukane_i}")
+print(maxi + 1)
